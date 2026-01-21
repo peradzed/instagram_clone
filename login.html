@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="loginstyles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Instagram</title>
+  </head>
+  <body>
+    <div id="login-container">
+      <!-- Phone image -->
+      <div id="phone-img-container">
+        <img
+          src="./images/home-phones-2x.png"
+          alt="phone_image"
+          id="phone_img"
+        />
+        <img src="./images/screenshot1-2x.png" id="screenshot" />
+      </div>
+
+      <!-- Login -->
+      <div id="login-right">
+        <form id="inputs_form">
+          <img
+            src="./images/instagram-text-icon.png"
+            alt="insta_logo"
+            id="insta_logo"
+          />
+          <div id="inputs_div">
+            <input
+              type="text"
+              class="input"
+              id="loginInput"
+              placeholder="Phone number, username, or email"
+            />
+            <input
+              type="password"
+              class="input"
+              id="passwordInput"
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" id="loginBtn">Log in</button>
+
+          <div id="or-div">
+            <div class="or-line"></div>
+            <p id="or-text">OR</p>
+            <div class="or-line"></div>
+          </div>
+
+          <div id="fb-text">
+            <span>
+              <img src="./images/facebook.png" id="fb-logo" />
+            </span>
+            <span>Log in with Facebook</span>
+          </div>
+          <p id="forgot-password">Forgot password?</p>
+        </form>
+
+        <div id="no-acct">
+          <p>
+            Don't have an account?
+            <a href="https://google.com" target="_blank" id="sign-up"
+              >Sign up</a
+            >
+          </p>
+        </div>
+
+        <div>
+          <p id="get-it-text">Get the app.</p>
+
+          <div id="get-it">
+            <img src="./images/googlePlay.png" alt="google" id="google-img" />
+            <img
+              src="./images/microsoft.png"
+              alt="microsoft"
+              id="microsoft-img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- For footer -->
+    <footer>
+      <div class="footer-div">
+        <p>Meta</p>
+        <p>About</p>
+        <p>Blog</p>
+        <p>Jobs</p>
+        <p>Help</p>
+        <p>API</p>
+        <p>Privacy</p>
+        <p>Terms</p>
+        <p>Locations</p>
+        <p>Instagram Lite</p>
+        <p>Threads</p>
+        <p>Contact Uploading & Non-Users</p>
+        <p>Meta Verified</p>
+      </div>
+
+      <div class="footer-div">
+        <p>English</p>
+        <p>© 2025 Instagram from Meta</p>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

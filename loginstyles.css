@@ -1,0 +1,204 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Roboto", serif;
+  font-size: 14px;
+}
+
+#login-container {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+}
+
+#phone-img-container {
+  flex-basis: 55%;
+  position: relative;
+}
+
+#phone_img {
+  width: 100%;
+}
+
+#screenshot {
+  position: absolute;
+  width: 55%;
+  top: 22px;
+  left: 155px;
+}
+
+#login-right {
+  flex-basis: 45%;
+}
+
+#insta_logo {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+#inputs_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gainsboro;
+  padding: 40px 40px 10px 40px;
+}
+
+#inputs_div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input {
+  margin-top: 5px;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  background-color: #fafafa;
+}
+
+button {
+  background-color: #0095f6;
+  color: white;
+  font-weight: 600;
+  padding: 9px;
+  border: none;
+  border-radius: 8px;
+  margin: 12px;
+  width: 100%;
+}
+
+#or-div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.or-line {
+  flex-grow: 1;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+#or-text {
+  padding: 0px 10px;
+  text-align: center;
+  color: gray;
+  font-size: 13px;
+}
+
+#fb-text {
+  color: #0095f6;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#fb-logo {
+  max-width: 20px;
+  margin-right: 7px;
+}
+
+#forgot-password {
+  color: #00376b;
+}
+
+#sign-up {
+  color: #0095f6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#no-acct {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gainsboro;
+  padding: 10px 0px;
+}
+
+#get-it {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#get-it-text {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#google-img {
+  max-width: 150px;
+}
+
+#microsoft-img {
+  max-width: 100px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: gray;
+  padding-bottom: 30px;
+}
+
+.footer-div {
+  display: flex;
+}
+
+.footer-div > p {
+  margin-right: 15px;
+}
+
+/* ====== For tablets ===== */
+
+@media only screen and (max-width: 880px) {
+  #phone-img-container {
+    display: none;
+  }
+  #login-right {
+    flex-basis: 100%;
+    max-width: 380px;
+  }
+  #login-container {
+    justify-content: center;
+    align-items: center;
+  }
+  footer {
+    padding-top: 50px;
+  }
+  .footer-div {
+    max-width: 600px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-div > p {
+    margin-top: 0;
+  }
+}
+
+/* ====== For Mobile ===== */
+
+@media only screen and (max-width: 430px) {
+  #inputs_form {
+    border: none;
+  }
+
+  #no-acct {
+    border: none;
+  }
+}
