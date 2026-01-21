@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #0f1214;
   font-family: "Roboto", serif;
   font-size: 14px;
 }
@@ -45,7 +45,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid gainsboro;
   padding: 40px 40px 10px 40px;
 }
 
@@ -60,9 +59,11 @@ body {
   padding: 12px;
   border-radius: 5px;
   border: 1px solid #dbdbdb;
-  background-color: #fafafa;
+  background-color: #707070;
 }
-
+.input::placeholder {
+  color: #dbdbdb;
+}
 button {
   background-color: #0095f6;
   color: white;
@@ -72,6 +73,7 @@ button {
   border-radius: 8px;
   margin: 12px;
   width: 100%;
+  cursor: pointer;
 }
 
 #or-div {
@@ -99,6 +101,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 #fb-logo {
@@ -107,7 +110,11 @@ button {
 }
 
 #forgot-password {
-  color: #00376b;
+  color: #ffffff;
+  cursor: pointer;
+}
+#forgot-password:hover {
+  text-decoration: underline;
 }
 
 #sign-up {
@@ -122,27 +129,11 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid gainsboro;
+  /* border: 1px solid gainsboro; */
   padding: 10px 0px;
 }
-
-#get-it {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#get-it-text {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-#google-img {
-  max-width: 150px;
-}
-
-#microsoft-img {
-  max-width: 100px;
+#no-acct p {
+  color: white;
 }
 
 footer {
