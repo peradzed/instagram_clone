@@ -181,3 +181,64 @@ nav a img {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.prof-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.main-feed .right-sidebar {
+  flex: 1;
+}
+
+.main-feed .right-sidebar .sidebar-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.main-feed .right-sidebar .sidebar-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.main-feed .right-sidebar .sidebar-item .account-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-feed .right-sidebar .sidebar-item .account-info a:first-child {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.main-feed .right-sidebar .sidebar-item .account-info p {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgb(173, 173, 173);
+}
+
+.main-feed .right-sidebar .sidebar-item a:last-child {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2271b3;
+  cursor: pointer;
+}
+
+.main-feed .right-sidebar .sidebar-item a:last-child:hover {
+  color: white;
+}
+
+.main-feed .right-sidebar h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 15px;
+}
