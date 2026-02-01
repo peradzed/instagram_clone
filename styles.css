@@ -190,15 +190,13 @@ nav a img {
   border-radius: 50%;
   object-fit: cover;
   display: block;
-
-  /* border: 2px solid var(--bg-main); */
 }
 
 .main-feed .feeds .status-section p {
   font-size: 12px;
   text-align: center;
-  margin-top: 18px;
-  /* width: auto; Auto ან მინიმუმ 90px */
+  margin-top: 15px;
+
   max-width: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -269,7 +267,6 @@ nav a img {
 .main-feed .feeds .posts {
   width: 80%;
   margin-top: 130px;
-  /* margin: 25px auto; */
   padding-bottom: 80px;
 }
 
@@ -279,7 +276,16 @@ nav a img {
   align-items: center;
   margin-bottom: 15px;
 }
-
+.post {
+  width: 470px;
+}
+.fa-ellipsis-h {
+  cursor: pointer;
+}
+.fa-ellipsis-h:hover {
+  color: gray;
+  transform: scale(1.2);
+}
 .main-feed .feeds .posts .post .post-header .user-details {
   display: flex;
   align-items: center;
@@ -323,13 +329,15 @@ nav a img {
 .main-feed .posts .post img {
   width: 100%;
   height: auto;
+  /* width: 470px; */
+  height: auto;
 
   border-radius: 5px;
   border: 1px solid gray;
 }
 
 .main-feed .posts .post .post-footer {
-  font-size: 0.8rem;
+  font-size: 14px;
   margin-bottom: 20px;
   border-bottom: 1px solid grey;
 }
