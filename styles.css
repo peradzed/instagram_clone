@@ -146,39 +146,40 @@ nav a img {
 .main-feed .feeds .status-section .status {
   width: 90px;
   height: 90px;
-  border: 2px solid rgb(255, 106, 6);
+  border: 4px solid rgb(255, 106, 6);
   border-radius: 50%;
-  background-color: gray;
+  /* background-color: gray; */
   cursor: pointer;
   flex-shrink: 0;
   display: grid;
   place-items: center;
 }
-#new-status {
+/* #new-status {
   background: conic-gradient(
     from 180deg at 50% 50%,
     #ffdc80 0deg,
     #f77737 90deg,
     #d62976 180deg,
-    #962fbf 270deg,
-    #4f5bd5 360deg
+    #f77737 270deg,
+    #fa7861 360deg
   );
-}
+} */
 
 .main-feed .feeds .status-section .status img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  display: block;
 
-  border: 2px solid var(--bg-main);
+  /* border: 2px solid var(--bg-main); */
 }
 
 .main-feed .feeds .status-section p {
   font-size: 12px;
   text-align: center;
   margin-top: 18px;
-  width: auto; /* Auto ან მინიმუმ 90px */
+  /* width: auto; Auto ან მინიმუმ 90px */
   max-width: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -373,7 +374,7 @@ nav a img {
 .main-feed .posts .post .post-footer .comment-container .comment-button button {
   background-color: transparent;
   border: none;
-  color: blue;
+  color: white;
   font-weight: 600;
   cursor: pointer;
   margin-right: 5px;

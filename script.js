@@ -59,7 +59,6 @@ followButtons.forEach((btn) => {
     }
   });
 
-  // prevent hover reverting styles
   btn.addEventListener("mouseenter", () => {
     btn.style.color = btn.dataset.followed === "true" ? "lightgrey" : "#0095f6";
   });
