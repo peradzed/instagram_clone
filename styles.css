@@ -133,7 +133,8 @@ nav a img {
 
 .main-feed .feeds .status-section {
   display: flex;
-  gap: 30px;
+  gap: 20px; /* მანძილი სტატუსებს შორის */
+  padding-bottom: 15px; /* ცოტა სივრცე პოსტის ზედა ნაწილსა და სტატუსს შორის */
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -176,10 +177,12 @@ nav a img {
 .main-feed .feeds .status-section p {
   font-size: 12px;
   text-align: center;
-  margin-top: 8px;
-  width: 80px;
+  margin-top: 18px;
+  width: auto; /* Auto ან მინიმუმ 90px */
+  max-width: 90px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .prof-pic {
@@ -241,4 +244,154 @@ nav a img {
   font-weight: 500;
   color: white;
   margin-bottom: 15px;
+}
+
+.main-feed .feeds .posts {
+  width: 80%;
+  margin-top: 130px;
+  /* margin: 25px auto; */
+  padding-bottom: 80px;
+}
+
+.main-feed .feeds .posts .post .post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.main-feed .feeds .posts .post .post-header .user-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.main-feed .feeds .posts .post .post-header .image-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gray;
+  display: grid;
+  place-items: center;
+}
+
+.main-feed .feeds .posts .post .post-header img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--bg-main);
+}
+
+.main-feed .feeds .posts .post .post-header .user-details p:first-child {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.main-feed .feeds .posts .post .post-header .user-details p:first-child span {
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+}
+
+.main-feed .feeds .posts .post .post-header .user-details p:last-child {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.main-feed .posts .post img {
+  width: 100%;
+  height: auto;
+
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.main-feed .posts .post .post-footer {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid grey;
+}
+
+.main-feed .posts .post .post-footer .post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.main-feed .posts .post .post-footer .post-actions .left-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.main-feed .posts .post .post-footer .post-actions i {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.main-feed .posts .post .post-footer .likes {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.main-feed .posts .post .post-footer .post-text {
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.main-feed .posts .post .post-footer .comments {
+  font-size: 14px;
+  color: rgb(172, 172, 172);
+  margin-bottom: 10px;
+}
+
+.main-feed .posts .post .post-footer .comment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.main-feed .posts .post .post-footer .comment-container input {
+  width: 100%;
+  /* background-color: white; */
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+}
+
+.main-feed .posts .post .post-footer .comment-container .comment-button {
+  flex-shrink: 0;
+}
+
+.main-feed .posts .post .post-footer .comment-container .comment-button button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.main-feed .posts .post .post-footer .comment-container .comment-button i {
+  color: white;
+}
+.image-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: gray;
+  display: grid;
+  place-items: center;
+  object-fit: cover;
+}
+.more-text {
+  color: #2271b3;
+  cursor: pointer;
 }
