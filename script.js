@@ -42,7 +42,7 @@ followButtons.forEach((btn) => {
     localStorage.setItem("followed_" + userKey, "true");
   };
 
-  // restore state
+  // restore
   if (localStorage.getItem("followed_" + userKey)) {
     setFollowed();
   } else {
