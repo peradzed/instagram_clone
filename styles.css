@@ -232,7 +232,7 @@ nav a img {
   cursor: pointer;
 }
 
-.main-feed .right-sidebar .sidebar-item a:last-child:hover {
+.main-feed .right-sidebar .sidebar-item :last-child:hover {
   color: white;
 }
 
