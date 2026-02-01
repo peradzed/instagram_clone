@@ -23,6 +23,19 @@ a {
 i {
   color: white;
 }
+.insta-logo {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insta-logo:hover {
+  background-color: #504f4f98;
+  border-radius: 8px;
+}
 .logo {
   height: 60px;
   display: flex;
