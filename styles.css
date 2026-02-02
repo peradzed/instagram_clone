@@ -423,3 +423,22 @@ nav a img {
   color: #2271b3;
   cursor: pointer;
 }
+
+.comment-container {
+  display: none;
+}
+
+.like-btn {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.like-btn.liked {
+  color: red;
+  /* background-color: red; */
+}
+
+.comment-container {
+  display: none;
+}

@@ -74,3 +74,63 @@ followButtons.forEach((btn) => {
     btn.style.color = btn.dataset.followed === "true" ? "lightgrey" : "#0095f6";
   });
 });
+
+document.querySelectorAll(".post-footer").forEach((post) => {
+  const commentIcon = post.querySelector(".toggle-comment");
+  const commentBox = post.querySelector(".comment-container");
+
+  commentIcon.addEventListener("click", () => {
+    commentBox.style.display =
+      commentBox.style.display === "flex" ? "none" : "flex";
+  });
+});
+//like button functionality
+
+let postData = JSON.parse(localStorage.getItem("posts")) || {};
+
+document.querySelectorAll(".post-footer").forEach((post) => {
+  const postId = post.dataset.postid;
+  const likeBtn = post.querySelector(".like-btn");
+  const likesText = post.querySelector(".likes");
+  const commentIcon = post.querySelector(".toggle-comment");
+  const commentContainer = post.querySelector(".comment-container");
+
+  // 📌 Load previous state
+  if (postData[postId]) {
+    likesText.innerText = postData[postId].likes + " likes";
+
+    if (postData[postId].liked) {
+      likeBtn.classList.add("liked");
+      likeBtn.classList.remove("far");
+      likeBtn.classList.add("fas"); // solid heart
+    } else {
+      likeBtn.classList.remove("liked");
+      likeBtn.classList.remove("fas");
+      likeBtn.classList.add("far"); // empty heart
+    }
+  }
+
+  // ❤️ Like toggle
+  likeBtn.addEventListener("click", () => {
+    let likes = parseInt(likesText.innerText) || 0;
+
+    if (likeBtn.classList.contains("liked")) {
+      // Unlike
+      likeBtn.classList.remove("liked");
+      likeBtn.classList.remove("fas");
+      likeBtn.classList.add("far");
+      likes -= 1;
+      postData[postId] = { liked: false, likes: likes };
+    } else {
+      // Like
+      likeBtn.classList.add("liked");
+      likeBtn.classList.remove("far");
+      likeBtn.classList.add("fas");
+      likes += 1;
+      postData[postId] = { liked: true, likes: likes };
+    }
+
+    likesText.innerText = likes + " likes";
+    localStorage.setItem("posts", JSON.stringify(postData));
+  });
+});
