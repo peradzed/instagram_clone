@@ -60,7 +60,9 @@ body {
   border-radius: 5px;
   border: 1px solid #dbdbdb;
   background-color: #707070;
+  color: white;
 }
+
 .input::placeholder {
   color: #dbdbdb;
 }
