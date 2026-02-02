@@ -20,6 +20,17 @@
 //     alert("Incorrect email or password");
 //   }
 // });
+if (localStorage.getItem("isLoggedIn") !== "true") {
+  window.location.href = "login.html";
+}
+
+const user = JSON.parse(localStorage.getItem("userData"));
+
+// USERNAME (Hollywoo.Horseman)
+document.querySelector(".account-info a").innerText = user.username;
+
+// FULL NAME (Bojack Horseman)
+document.querySelector(".account-info p").innerText = user.fullName;
 
 const followButtons = document.querySelectorAll(".suggest-follow");
 
