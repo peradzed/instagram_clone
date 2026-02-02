@@ -391,7 +391,7 @@ nav a img {
   outline: none;
   padding: 10px;
   border-radius: 20px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .main-feed .posts .post .post-footer .comment-container .comment-button {
@@ -441,4 +441,11 @@ nav a img {
 
 .comment-container {
   display: none;
+}
+.comment-container input {
+  color: black; /* typed text */
+  background-color: #fff; /* optional, თუ გინდა background თეთრი */
+  border: 1px solid #ccc; /* optional, რომ ვსადაც გამოსხვაო */
+  padding: 5px 10px; /* ზუსტად ისე, როგორც შენ გინდა */
+  border-radius: 5px;
 }

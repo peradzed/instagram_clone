@@ -95,7 +95,7 @@ document.querySelectorAll(".post-footer").forEach((post) => {
   const commentIcon = post.querySelector(".toggle-comment");
   const commentContainer = post.querySelector(".comment-container");
 
-  // 📌 Load previous state
+  // Load previous state
   if (postData[postId]) {
     likesText.innerText = postData[postId].likes + " likes";
 
@@ -110,7 +110,7 @@ document.querySelectorAll(".post-footer").forEach((post) => {
     }
   }
 
-  // ❤️ Like toggle
+  //Like toggle
   likeBtn.addEventListener("click", () => {
     let likes = parseInt(likesText.innerText) || 0;
 
