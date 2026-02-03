@@ -79,6 +79,9 @@ document.querySelectorAll(".post-footer").forEach((post) => {
   const commentIcon = post.querySelector(".toggle-comment");
   const commentBox = post.querySelector(".comment-container");
 
+  // თავიდან დამალვა
+  commentBox.style.display = "none";
+
   commentIcon.addEventListener("click", () => {
     commentBox.style.display =
       commentBox.style.display === "flex" ? "none" : "flex";
