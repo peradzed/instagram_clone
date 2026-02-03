@@ -150,6 +150,7 @@ nav a img {
   padding-bottom: 15px; /* ცოტა სივრცე პოსტის ზედა ნაწილსა და სტატუსს შორის */
   overflow-x: auto;
   overflow-y: hidden;
+  width: 470px;
 }
 
 .main-feed .feeds .status-section::-webkit-scrollbar {

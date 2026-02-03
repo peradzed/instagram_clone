@@ -16,8 +16,8 @@ body {
 }
 
 #phone-img-container {
-  flex-basis: 55%;
   position: relative;
+  margin-top: 120px;
 }
 
 #phone_img {

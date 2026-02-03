@@ -122,7 +122,7 @@ document.querySelectorAll(".post-footer").forEach((post) => {
       likes -= 1;
       postData[postId] = { liked: false, likes: likes };
     } else {
-      // Like
+      // Like!
       likeBtn.classList.add("liked");
       likeBtn.classList.remove("far");
       likeBtn.classList.add("fas");
