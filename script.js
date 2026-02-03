@@ -134,3 +134,30 @@ document.querySelectorAll(".post-footer").forEach((post) => {
     localStorage.setItem("posts", JSON.stringify(postData));
   });
 });
+
+const section = document.querySelector(".status-section");
+const leftBtn = document.querySelector(".scroll-btn.left");
+const rightBtn = document.querySelector(".scroll-btn.right");
+
+function updateButtons() {
+  leftBtn.style.display = section.scrollLeft > 0 ? "block" : "none";
+  rightBtn.style.display =
+    section.scrollLeft + section.clientWidth < section.scrollWidth
+      ? "block"
+      : "none";
+}
+
+leftBtn.addEventListener("click", () => {
+  section.scrollBy({ left: -150, behavior: "smooth" });
+  setTimeout(updateButtons, 100);
+});
+
+rightBtn.addEventListener("click", () => {
+  section.scrollBy({ left: 150, behavior: "smooth" });
+  setTimeout(updateButtons, 100);
+});
+
+section.addEventListener("scroll", updateButtons);
+
+// პირველად განახლება
+updateButtons();

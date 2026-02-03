@@ -450,3 +450,48 @@ nav a img {
   padding: 5px 10px; /* ზუსტად ისე, როგორც შენ გინდა */
   border-radius: 5px;
 }
+.status-wrapper {
+  position: relative;
+  width: 470px;
+  display: flex;
+  align-items: center;
+}
+
+.status-section {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth; /* გლუვი სკროლი */
+  flex: 1;
+}
+
+.status {
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(241, 241, 241);
+  color: rgb(7, 7, 7);
+  cursor: pointer;
+  display: none; /* თავიდან არ ჩანს */
+  z-index: 1;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
