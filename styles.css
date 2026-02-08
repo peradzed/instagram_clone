@@ -334,7 +334,7 @@ nav a img {
   height: auto;
 
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 1px solid rgba(56, 56, 56, 0.521);
 }
 
 .main-feed .posts .post .post-footer {
@@ -392,7 +392,8 @@ nav a img {
   outline: none;
   padding: 10px;
   border-radius: 20px;
-  color: rgb(0, 0, 0);
+  color: rgb(100, 100, 100);
+  background-color: rgb(53, 53, 53);
 }
 
 .main-feed .posts .post .post-footer .comment-container .comment-button {
