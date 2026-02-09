@@ -1,25 +1,3 @@
-// const form = document.getElementById("inputs_form");
-// const loginInput = document.getElementById("loginInput");
-// const passwordInput = document.getElementById("passwordInput");
-
-// const correctEmail = "test@gmail.com";
-// const correctPassword = "123456";
-
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
-
-//   const email = loginInput.value.trim();
-//   const password = passwordInput.value.trim();
-
-//   if (email === correctEmail && password === correctPassword) {
-//     localStorage.setItem("isLoggedIn", "true");
-//     localStorage.setItem("userEmail", email);
-
-//     window.location.href = "home.html";
-//   } else {
-//     alert("Incorrect email or password");
-//   }
-// });
 if (localStorage.getItem("isLoggedIn") !== "true") {
   window.location.href = "login.html";
 }
@@ -28,8 +6,6 @@ const user = JSON.parse(localStorage.getItem("userData"));
 
 // USERNAME (Hollywoo.Horseman)
 document.querySelector(".account-info a").innerText = user.username;
-
-// FULL NAME (Bojack Horseman)
 document.querySelector(".account-info p").innerText = user.fullName;
 
 const followButtons = document.querySelectorAll(".suggest-follow");
@@ -53,7 +29,7 @@ followButtons.forEach((btn) => {
     localStorage.setItem("followed_" + userKey, "true");
   };
 
-  // restore
+  // აღდგენა ადგილობრივი საცავიდან
   if (localStorage.getItem("followed_" + userKey)) {
     setFollowed();
   } else {
@@ -79,7 +55,6 @@ document.querySelectorAll(".post-footer").forEach((post) => {
   const commentIcon = post.querySelector(".toggle-comment");
   const commentBox = post.querySelector(".comment-container");
 
-  // თავიდან დამალვა
   commentBox.style.display = "none";
 
   commentIcon.addEventListener("click", () => {
@@ -87,7 +62,7 @@ document.querySelectorAll(".post-footer").forEach((post) => {
       commentBox.style.display === "flex" ? "none" : "flex";
   });
 });
-//like button functionality
+//Like ღილაკის ფუნქციონალობა
 
 let postData = JSON.parse(localStorage.getItem("posts")) || {};
 
@@ -98,34 +73,31 @@ document.querySelectorAll(".post-footer").forEach((post) => {
   const commentIcon = post.querySelector(".toggle-comment");
   const commentContainer = post.querySelector(".comment-container");
 
-  // Load previous state
+  // ძველი მონაცემების აღდგენა
   if (postData[postId]) {
     likesText.innerText = postData[postId].likes + " likes";
 
     if (postData[postId].liked) {
       likeBtn.classList.add("liked");
       likeBtn.classList.remove("far");
-      likeBtn.classList.add("fas"); // solid heart
+      likeBtn.classList.add("fas"); //
     } else {
       likeBtn.classList.remove("liked");
       likeBtn.classList.remove("fas");
-      likeBtn.classList.add("far"); // empty heart
+      likeBtn.classList.add("far");
     }
   }
 
-  //Like toggle
   likeBtn.addEventListener("click", () => {
     let likes = parseInt(likesText.innerText) || 0;
 
     if (likeBtn.classList.contains("liked")) {
-      // Unlike
       likeBtn.classList.remove("liked");
       likeBtn.classList.remove("fas");
       likeBtn.classList.add("far");
       likes -= 1;
       postData[postId] = { liked: false, likes: likes };
     } else {
-      // Like!
       likeBtn.classList.add("liked");
       likeBtn.classList.remove("far");
       likeBtn.classList.add("fas");
@@ -162,5 +134,42 @@ rightBtn.addEventListener("click", () => {
 
 section.addEventListener("scroll", updateButtons);
 
-// პირველად განახლება
 updateButtons();
+
+//ფოტოს სლაიდერი
+document.querySelectorAll(".post-slider").forEach((slider) => {
+  const images = slider.querySelector(".post-images");
+  const leftBtn = slider.querySelector(".post-left");
+  const rightBtn = slider.querySelector(".post-right");
+  const dots = slider.querySelectorAll(".post-dot");
+  const imgCount = dots.length;
+
+  function updatePostUI() {
+    leftBtn.style.display = images.scrollLeft > 0 ? "block" : "none";
+    rightBtn.style.display =
+      images.scrollLeft + images.clientWidth < images.scrollWidth
+        ? "block"
+        : "none";
+
+    const index = Math.round(images.scrollLeft / images.clientWidth);
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  leftBtn.addEventListener("click", () => {
+    images.scrollBy({ left: -images.clientWidth, behavior: "smooth" });
+    setTimeout(updatePostUI, 200);
+  });
+
+  rightBtn.addEventListener("click", () => {
+    images.scrollBy({ left: images.clientWidth, behavior: "smooth" });
+    setTimeout(updatePostUI, 200);
+  });
+
+  images.addEventListener("scroll", updatePostUI);
+
+  dots[0].classList.add("active");
+  updatePostUI();
+});

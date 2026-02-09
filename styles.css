@@ -496,3 +496,70 @@ nav a img {
 .scroll-btn.right {
   right: 0;
 }
+
+.post-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.post-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.post-images::-webkit-scrollbar {
+  display: none;
+}
+
+.post-images img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* პოსტის ღილაკები — იზოლირებული */
+.post-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(241, 241, 241);
+  color: rgb(7, 7, 7);
+  cursor: pointer;
+  display: none;
+  z-index: 2;
+}
+
+.post-left {
+  left: 8px;
+}
+
+.post-right {
+  right: 8px;
+}
+
+.post-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0;
+}
+
+.post-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.post-dot.active {
+  background-color: #3897f0;
+  transform: scale(1.6);
+}
