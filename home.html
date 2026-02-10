@@ -45,7 +45,7 @@
           <i class="far fa-heart"></i>
           <span>Notifications</span>
         </a>
-        <a href="#">
+        <a href="#" id="createPostBtn">
           <i class="fas fa-plus-square"></i>
           <span>Create</span>
         </a>
@@ -392,6 +392,20 @@
         </div>
       </div>
     </section>
+    <div class="create-modal" id="createModal">
+      <div class="modal-content">
+        <h3>Create new post</h3>
+
+        <input type="file" id="postImages" multiple accept="image/*" />
+        <input type="text" id="postLocation" placeholder="Location" />
+        <textarea id="postCaption" placeholder="Write a caption..."></textarea>
+
+        <div class="modal-actions">
+          <button id="sharePost">Share</button>
+          <button id="closeModal">Cancel</button>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>

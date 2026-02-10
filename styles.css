@@ -129,11 +129,12 @@ nav a img {
 }
 
 /*main feed area*/
+
 .main-feed {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  margin-left: 25%;
-  margin-right: 10%;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 30px 0;
   gap: 80px;
 }
@@ -562,4 +563,141 @@ nav a img {
 .post-dot.active {
   background-color: #3897f0;
   transform: scale(1.6);
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 1000;
+}
+.create-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.479); /* ოდნავ მუქი ფონი */
+  display: none; /* მთავარია ჩაკეტილი იყოს თავიდან */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px); /* თხელი ბლური ფონისთვის */
+}
+
+.modal-content {
+  background: #4949494b; /* ნათელი ქეისი */
+  padding: 25px 30px;
+  width: 400px;
+  max-width: 90%; /* responsive სმარტფონებისთვის */
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: slideDown 0.3s ease;
+}
+.modal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+/* მცირე ანიმაცია გამოჩენისთვის */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Input-ები და textarea */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #6e6e6e;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #0095f6;
+}
+
+/* ღილაკები */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  background-color: #0095f6; /* Instagram-style primary button */
+  color: white;
+  font-weight: 500;
+  border-radius: 30px;
+  border: none;
+  padding: 8px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-actions button:hover {
+  background-color: #0073cc;
+}
+
+/* Cancel button უფრო subtle */
+.modal-actions button#closeModal {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.modal-actions button#closeModal:hover {
+  background-color: #c7c7c7;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  /* მარჯვენა suggestion გაქრეს */
+  .right-sidebar,
+  .suggestions {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+  }
+  .main-feed {
+    margin-left: 240px;
+  }
+  /* მარცხენა sidebar ვიწრო */
+  .sidebar {
+    width: 72px;
+  }
+
+  /* ტექსტები დაიმალოს */
+  .sidebar .menu-text {
+    display: none;
+  }
+
+  /* hover ეფექტების გათიშვა */
+  .sidebar a:hover {
+    background: none;
+  }
+
+  /* feed ცენტრში სწორად */
+  .feed {
+    margin-left: 72px;
+  }
 }
