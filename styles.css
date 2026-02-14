@@ -727,41 +727,95 @@ nav a img {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 60px;
+    background: #0f1214;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #0f1214;
-    padding: 5px 0;
-    z-index: 10000;
+    z-index: 99999;
   }
 
-  nav a {
-    flex-direction: column;
-    gap: 2px;
-    margin: 0;
-    padding: 5px 0;
+  /* 🔴 EVERYTHING OFF */
+  nav a,
+  nav i,
+  nav img {
+    display: none !important;
   }
 
-  nav a span {
-    display: none; /* ტექსტი დაიმალოს */
-  }
-
-  /* მხოლოდ ეს აითემები ჩანს */
-  nav a {
-    display: none;
-  }
-
+  /* 🟢 ONLY THESE 6 ON */
   nav a.nav-home,
   nav a.nav-reels,
   nav a.nav-messages,
   nav a.nav-explore,
   nav a.nav-create,
   nav a.nav-profile {
-    display: flex;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* footernav დამალე */
+  nav a.nav-home i,
+  nav a.nav-reels i,
+  nav a.nav-messages i,
+  nav a.nav-explore i,
+  nav a.nav-create i,
+  nav a.nav-profile img {
+    display: block !important;
+  }
+
+  nav span {
+    display: none !important;
+  }
+
   nav .footernav {
-    display: none;
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 70px;
+  }
+  .main-feed {
+    padding-bottom: 90px;
+  }
+  .feeds,
+  .posts {
+    padding-bottom: 100px;
+  }
+  nav {
+    z-index: 100000;
+  }
+  .left-sidebar {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  .feeds {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* ⬅️ შეცვალე */
+  }
+  .posts {
+    width: 100%;
+    max-width: 470px;
+    margin: 130px auto 0 auto; ⬅️ ცენტრი
+    padding-bottom: 80px;
+  }
+  .feeds {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .posts {
+    width: 100%;
+    max-width: 470px;
+    margin: 130px auto 0;
+  }
+  .status-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
   }
 }
