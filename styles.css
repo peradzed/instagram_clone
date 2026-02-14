@@ -12,17 +12,13 @@ body {
   background-color: #0f1214;
 }
 
-p {
-  color: white;
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-
+a,
+p,
 i {
   color: white;
+  text-decoration: none;
 }
+
 .insta-logo {
   cursor: pointer;
   width: 50px;
@@ -52,12 +48,15 @@ i {
 .left-sidebar {
   position: fixed;
   left: 0;
-  width: 250px;
+  width: 70px;
   height: 100vh;
   padding: 20px;
-  width: 70px; /* ჩაკეცილი */
+  /* width: 70px; */
   transition: width 0.3s;
   overflow: hidden;
+}
+.left-sidebar:hover {
+  width: 220px;
 }
 
 nav {
@@ -85,11 +84,6 @@ nav a img {
 }
 .footernav {
   margin-top: 120px;
-}
-
-/* როცა მაუსი მივა sidebar-ზე */
-.left-sidebar:hover {
-  width: 220px; /* გაშლილი */
 }
 
 /* ტექსტი ნაგულისხმევად დამალული */
@@ -137,6 +131,12 @@ nav a img {
   margin: 0 auto;
   padding: 30px 0;
   gap: 80px;
+}
+.feeds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 470px;
 }
 
 .main-feed .feeds {
@@ -215,6 +215,9 @@ nav a img {
 .main-feed .right-sidebar {
   flex: 1;
 }
+.right-sidebar {
+  flex: 0 0 300px;
+}
 
 .main-feed .right-sidebar .sidebar-item {
   display: flex;
@@ -265,7 +268,23 @@ nav a img {
   color: white;
   margin-bottom: 15px;
 }
+.posts {
+  width: 100%;
+  max-width: 470px;
+  margin-top: 130px;
+  padding-bottom: 80px;
+}
 
+.post {
+  width: 100%;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
 .main-feed .feeds .posts {
   width: 80%;
   margin-top: 130px;
@@ -664,7 +683,7 @@ nav a img {
 }
 
 /* responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   /* მარჯვენა suggestion გაქრეს */
   .right-sidebar,
   .suggestions {
@@ -679,25 +698,70 @@ nav a img {
     height: 100vh;
   }
   .main-feed {
-    margin-left: 240px;
+    align-items: center;
   }
-  /* მარცხენა sidebar ვიწრო */
+
   .sidebar {
     width: 72px;
   }
 
-  /* ტექსტები დაიმალოს */
   .sidebar .menu-text {
     display: none;
   }
 
-  /* hover ეფექტების გათიშვა */
   .sidebar a:hover {
     background: none;
   }
 
-  /* feed ცენტრში სწორად */
   .feed {
     margin-left: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insta-logo {
+    display: none;
+  }
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f1214;
+    padding: 5px 0;
+    z-index: 10000;
+  }
+
+  nav a {
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding: 5px 0;
+  }
+
+  nav a span {
+    display: none; /* ტექსტი დაიმალოს */
+  }
+
+  /* მხოლოდ ეს აითემები ჩანს */
+  nav a {
+    display: none;
+  }
+
+  nav a.nav-home,
+  nav a.nav-reels,
+  nav a.nav-messages,
+  nav a.nav-explore,
+  nav a.nav-create,
+  nav a.nav-profile {
+    display: flex;
+  }
+
+  /* footernav დამალე */
+  nav .footernav {
+    display: none;
   }
 }
