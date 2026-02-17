@@ -131,7 +131,6 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid gainsboro; */
   padding: 10px 0px;
 }
 #no-acct p {
@@ -155,8 +154,11 @@ footer {
 .footer-div > p {
   margin-right: 15px;
 }
-
-/* ====== For tablets ===== */
+.input-error {
+  color: #ed4956;
+  font-size: 12px;
+  margin: 4px 0 8px;
+}
 
 @media only screen and (max-width: 880px) {
   #phone-img-container {

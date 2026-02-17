@@ -86,7 +86,6 @@ nav a img {
   margin-top: 120px;
 }
 
-/* ტექსტი ნაგულისხმევად დამალული */
 .left-sidebar nav a span {
   opacity: 0;
   visibility: hidden;
@@ -94,13 +93,11 @@ nav a img {
   white-space: nowrap;
 }
 
-/* hover-ზე ტექსტი გამოჩნდეს */
 .left-sidebar:hover nav a span {
   opacity: 1;
   visibility: visible;
 }
 
-/* აიქონი ყოველთვის ჩანდეს */
 .left-sidebar nav a i,
 .left-sidebar nav a img {
   font-size: 20px;
@@ -117,7 +114,6 @@ nav a img {
   transition: background-color 0.2s;
 }
 
-/* hover-ზე ნაცრისფერი ფონი */
 .left-sidebar nav a:hover {
   background-color: #504f4f98;
 }
@@ -147,8 +143,8 @@ nav a img {
 
 .main-feed .feeds .status-section {
   display: flex;
-  gap: 20px; /* მანძილი სტატუსებს შორის */
-  padding-bottom: 15px; /* ცოტა სივრცე პოსტის ზედა ნაწილსა და სტატუსს შორის */
+  gap: 20px;
+  padding-bottom: 15px;
   overflow-x: auto;
   overflow-y: hidden;
   width: 470px;
@@ -167,24 +163,12 @@ nav a img {
   display: grid;
   place-items: center;
 
-  /* Instagram story gradient border */
   border: 4px solid transparent;
   background:
     linear-gradient(#000, #000) padding-box,
     linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)
       border-box;
 }
-
-/* #new-status {
-  background: conic-gradient(
-    from 180deg at 50% 50%,
-    #ffdc80 0deg,
-    #f77737 90deg,
-    #d62976 180deg,
-    #f77737 270deg,
-    #fa7861 360deg
-  );
-} */
 
 .main-feed .feeds .status-section .status img {
   width: 80px;
@@ -465,10 +449,10 @@ nav a img {
   display: none;
 }
 .comment-container input {
-  color: black; /* typed text */
-  background-color: #fff; /* optional, თუ გინდა background თეთრი */
-  border: 1px solid #ccc; /* optional, რომ ვსადაც გამოსხვაო */
-  padding: 5px 10px; /* ზუსტად ისე, როგორც შენ გინდა */
+  color: black; 
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  padding: 5px 10px; 
   border-radius: 5px;
 }
 .status-wrapper {
@@ -482,7 +466,7 @@ nav a img {
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  scroll-behavior: smooth; /* გლუვი სკროლი */
+  scroll-behavior: smooth; 
   flex: 1;
 }
 
@@ -505,7 +489,7 @@ nav a img {
   background-color: rgb(241, 241, 241);
   color: rgb(7, 7, 7);
   cursor: pointer;
-  display: none; /* თავიდან არ ჩანს */
+  display: none; 
   z-index: 1;
 }
 
@@ -540,7 +524,7 @@ nav a img {
   object-fit: cover;
 }
 
-/* პოსტის ღილაკები — იზოლირებული */
+
 .post-slide-btn {
   position: absolute;
   top: 50%;
@@ -593,19 +577,19 @@ nav a img {
 .create-modal {
   position: fixed;
   inset: 0;
-  background: rgba(26, 26, 26, 0.479); /* ოდნავ მუქი ფონი */
-  display: none; /* მთავარია ჩაკეტილი იყოს თავიდან */
+  background: rgba(26, 26, 26, 0.479); 
+  display: none; 
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  backdrop-filter: blur(4px); /* თხელი ბლური ფონისთვის */
+  backdrop-filter: blur(4px); 
 }
 
 .modal-content {
-  background: #4949494b; /* ნათელი ქეისი */
+  background: #4949494b; 
   padding: 25px 30px;
   width: 400px;
-  max-width: 90%; /* responsive სმარტფონებისთვის */
+  max-width: 90%; 
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -620,7 +604,7 @@ nav a img {
   text-align: center;
 }
 
-/* მცირე ანიმაცია გამოჩენისთვის */
+
 @keyframes slideDown {
   from {
     transform: translateY(-20px);
@@ -632,7 +616,7 @@ nav a img {
   }
 }
 
-/* Input-ები და textarea */
+
 .modal-content input,
 .modal-content textarea {
   width: 100%;
@@ -649,7 +633,7 @@ nav a img {
   border-color: #0095f6;
 }
 
-/* ღილაკები */
+
 .modal-actions {
   display: flex;
   justify-content: flex-end;
@@ -657,7 +641,7 @@ nav a img {
 }
 
 .modal-actions button {
-  background-color: #0095f6; /* Instagram-style primary button */
+  background-color: #0095f6; 
   color: white;
   font-weight: 500;
   border-radius: 30px;
@@ -684,7 +668,7 @@ nav a img {
 
 /* responsive */
 @media (max-width: 1280px) {
-  /* მარჯვენა suggestion გაქრეს */
+  
   .right-sidebar,
   .suggestions {
     display: none;
@@ -735,14 +719,14 @@ nav a img {
     z-index: 99999;
   }
 
-  /* 🔴 EVERYTHING OFF */
+ 
   nav a,
   nav i,
   nav img {
     display: none !important;
   }
 
-  /* 🟢 ONLY THESE 6 ON */
+  
   nav a.nav-home,
   nav a.nav-reels,
   nav a.nav-messages,
@@ -793,7 +777,7 @@ nav a img {
   .feeds {
     display: flex;
     flex-direction: column;
-    align-items: stretch; /* ⬅️ შეცვალე */
+    align-items: stretch;
   }
   .posts {
     width: 100%;

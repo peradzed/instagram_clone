@@ -4,7 +4,7 @@ if (localStorage.getItem("isLoggedIn") !== "true") {
 
 const user = JSON.parse(localStorage.getItem("userData"));
 
-// USERNAME (Hollywoo.Horseman)
+// USERNAME და სრული სახელი გვერდის ზედა ნაწილში
 document.querySelector(".account-info a").innerText = user.username;
 document.querySelector(".account-info p").innerText = user.fullName;
 
@@ -12,7 +12,7 @@ const followButtons = document.querySelectorAll(".suggest-follow");
 
 followButtons.forEach((btn) => {
   const userKey = btn.dataset.user;
-
+  //follow/unfollow ფუნქციონალობა
   const setFollow = () => {
     btn.textContent = "Follow";
     btn.style.color = "#0095f6";
@@ -20,7 +20,7 @@ followButtons.forEach((btn) => {
     btn.dataset.followed = "false";
     localStorage.removeItem("followed_" + userKey);
   };
-
+  //followed
   const setFollowed = () => {
     btn.textContent = "Followed";
     btn.style.color = "lightgrey";
@@ -29,13 +29,13 @@ followButtons.forEach((btn) => {
     localStorage.setItem("followed_" + userKey, "true");
   };
 
-  // აღდგენა ადგილობრივი საცავიდან
+  //მონაცემების შენახვა და აღდგენა
   if (localStorage.getItem("followed_" + userKey)) {
     setFollowed();
   } else {
     setFollow();
   }
-
+  // ღილაკის ფუნქციონალობა follow/unfollow
   btn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -51,6 +51,8 @@ followButtons.forEach((btn) => {
   });
 });
 
+//კომენტარის ღილაკის ფუნქციონალობა
+
 document.querySelectorAll(".post-footer").forEach((post) => {
   const commentIcon = post.querySelector(".toggle-comment");
   const commentBox = post.querySelector(".comment-container");
@@ -62,6 +64,7 @@ document.querySelectorAll(".post-footer").forEach((post) => {
       commentBox.style.display === "flex" ? "none" : "flex";
   });
 });
+
 //Like ღილაკის ფუნქციონალობა
 
 let postData = JSON.parse(localStorage.getItem("posts")) || {};
@@ -87,7 +90,7 @@ document.querySelectorAll(".post-footer").forEach((post) => {
       likeBtn.classList.add("far");
     }
   }
-
+  //like toggle
   likeBtn.addEventListener("click", () => {
     let likes = parseInt(likesText.innerText) || 0;
 
@@ -109,7 +112,7 @@ document.querySelectorAll(".post-footer").forEach((post) => {
     localStorage.setItem("posts", JSON.stringify(postData));
   });
 });
-
+//story ღილაკები
 const section = document.querySelector(".status-section");
 const leftBtn = document.querySelector(".scroll-btn.left");
 const rightBtn = document.querySelector(".scroll-btn.right");
@@ -136,7 +139,7 @@ section.addEventListener("scroll", updateButtons);
 
 updateButtons();
 
-//ფოტოს სლაიდერი
+//პოსტის ფოტოს სლაიდერი
 document.querySelectorAll(".post-slider").forEach((slider) => {
   const images = slider.querySelector(".post-images");
   const leftBtn = slider.querySelector(".post-left");
@@ -177,9 +180,6 @@ document.querySelectorAll(".post-slider").forEach((slider) => {
 //პოსტის დამატება
 
 document.addEventListener("DOMContentLoaded", () => {
-  // =========================
-  // USER
-  // =========================
   const user = JSON.parse(localStorage.getItem("userData")) || {
     username: "Hollywoo.Horseman",
     fullName: "Hollywoo",
@@ -194,9 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const feed = document.querySelector(".posts");
 
-  // =========================
-  // LOAD POSTS
-  // =========================
   let postsData = JSON.parse(localStorage.getItem("userPosts")) || [];
 
   function renderPost(post) {
@@ -251,15 +248,11 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    feed.prepend(postEl); // 🔥 ახალი პოსტები ზემოდან
+    feed.prepend(postEl);
   }
 
-  // Render all posts (refresh-ზე ზემოდან)
   postsData.forEach(renderPost);
 
-  // =========================
-  // LIKE & COMMENT (delegation)
-  // =========================
   document.addEventListener("click", (e) => {
     const footer = e.target.closest(".post-footer");
     if (!footer) return;
@@ -267,7 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const post = postsData.find((p) => p.id == postId);
     if (!post) return;
 
-    // LIKE
     if (e.target.classList.contains("like-btn")) {
       post.liked = !post.liked;
       post.likes = post.likes || 0;
@@ -281,13 +273,11 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("userPosts", JSON.stringify(postsData));
     }
 
-    // COMMENT TOGGLE
     if (e.target.classList.contains("toggle-comment")) {
       const box = footer.querySelector(".comment-container");
       box.style.display = box.style.display === "flex" ? "none" : "flex";
     }
 
-    // ADD COMMENT
     if (
       e.target.tagName === "BUTTON" &&
       e.target.parentElement.classList.contains("comment-button")
@@ -304,9 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // =========================
-  // CREATE POST MODAL
-  // =========================
   const createBtn = document.getElementById("createPostBtn");
   const modal = document.getElementById("createModal");
   const closeModal = document.getElementById("closeModal");
@@ -342,7 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
             liked: false,
             comments: [],
           };
-          postsData.unshift(post); // 🔥 ახალი პოსტი array-ის თავში
+          postsData.unshift(post);
           localStorage.setItem("userPosts", JSON.stringify(postsData));
           renderPost(post);
           resetModal();
